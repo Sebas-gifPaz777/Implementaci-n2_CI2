@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Books</title>
+</head>
+<body>
+<h1>List of Books</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Publisher</th>
+        <th>Author</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:each var="book" items="${books}">
+        <tr>
+            <td>${book.id}</td>
+            <td>${book.title}</td>
+            <td>${book.publisher}</td>
+            <td>${book.author}</td>
+            <td>${book.price}</td>
+            <td>${book.quantity}</td>
+            <td>
+                <a href="/books/${book.id}">View Details</a> |
+                <a href="/books/edit/${book.id}">Edit</a> |
+                <a href="/books/delete/${book.id}">Delete</a>
+            </td>
+        </tr>
+    </th:each>
+    </tbody>
+</table>
+<a href="/books/create">Create Book</a>
+</body>
+</html>
